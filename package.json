@@ -1,0 +1,40 @@
+{
+  "name": "discord-rpg",
+  "version": "0.0.1",
+  "description": "A rpg for discord using bots.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itenory/discord-rpg.git"
+  },
+  "keywords": [
+    "rpg",
+    "mmo",
+    "discord",
+    "bots"
+  ],
+  "author": "Tyrone Williams",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/itenory/discord-rpg/issues"
+  },
+  "homepage": "https://github.com/itenory/discord-rpg#readme",
+  "devDependencies": {
+    "eslint": "^5.14.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.6.0",
+    "eslint-plugin-import": "^2.16.0",
+    "jest": "^24.1.0",
+    "nodemon": "^1.18.10",
+    "prettier": "^1.16.4"
+  },
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "discord.js-commando": "^0.10.0",
+    "mongoose": "^5.4.16"
+  }
+}
