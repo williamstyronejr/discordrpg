@@ -22,12 +22,11 @@ class JoinGameCommand extends commando.Command {
     }
 
     // Get ids of roles to give the new player
-    const newcomer = guild.roles.find('name', 'Newcomer').id;
     const player = guild.roles.find('name', 'Player').id;
 
     // Give player initial roles
     try {
-      await message.member.addRoles([newcomer, player]);
+      await message.member.addRole(player);
 
       message.reply('Welcome to the game!');
       message.reply(
