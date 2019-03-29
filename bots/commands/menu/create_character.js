@@ -48,8 +48,16 @@ class CreateCharacterCommand extends commando.Command {
       await message.member.addRole(jobRole);
       await message.reply(`Selected role: ${args}`);
     } catch (err) {
-      console.log(err);
-      await message.reply('Error selecting role. Please try again.');
+      // Error message for name in use
+      if (err.code === 11000 || 11001) {
+        return message.reply(
+          createErrorMessage(
+            `The name ${name} is already in use, please try another name.`,
+            'createCharacter'
+          )
+        );
+      }
+      message.reply('Error selecting role. Please try again.');
     }
   }
 }
