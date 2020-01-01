@@ -1,11 +1,12 @@
 const Seeker = require('./Seeker');
-const config = require('../config/index');
+
+const { SEEKER_TOKEN: seekerToken } = process.env;
 
 /**
  * Initialize all bots
  */
 function initBots() {
-  return Promise.all([Seeker.login(config.botTokens.Seeker)]);
+  return Promise.all([Seeker.login(seekerToken)]);
 }
 
 module.exports = initBots;

@@ -1,6 +1,8 @@
+require('dotenv').config();
 const { connectDatabase } = require('./services/database');
 const initBots = require('./bots/index');
-const config = require('./config/index');
+
+const { MONGO_URI: mongoURI } = process.env;
 
 /**
  * Sets up database and initialzes bot. Will exit if any errors occur with
@@ -8,7 +10,7 @@ const config = require('./config/index');
  */
 async function setupServer() {
   try {
-    await connectDatabase(config.mongoURI);
+    await connectDatabase(mongoURI);
 
     await initBots().then(() => {
       console.log('All bots initialized');
